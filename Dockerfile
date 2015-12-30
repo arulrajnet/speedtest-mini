@@ -16,9 +16,11 @@ RUN apt-get update -qq \
   && apt-get autoremove -y \
   && rm -rf /var/lib/{apt,dpkg,cache,log}/* /tmp/* /var/tmp/*
 
-ADD entrypoint.sh /entrypoint.sh
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
 
 # Ports
 EXPOSE 80
 
-CMD ["/entrypoint.sh"]
+CMD [ "speedtest-server" ]
