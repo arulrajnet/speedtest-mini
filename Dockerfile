@@ -1,11 +1,12 @@
-FROM debian:wheezy
+FROM debian:stretch
 
 MAINTAINER Arulraj Venni <me@arulraj.net>
 
 # Install Apache, PHP5 and speedtest mini zip
 # 2021.10.20: Updated mini.zip url from last available archive.org archived url
+# 2021.10.20: Updated php5-* packages to php-* to fit
 RUN apt-get update -qq \
-  && apt-get install -y wget unzip apache2 php5 php5-mysql php5-gd php5-mcrypt \
+  && apt-get install -y wget unzip apache2 php php-mysql php-gd php-mcrypt \
   && wget https://web.archive.org/web/20180218001701/http://c.speedtest.net/mini/mini.zip -O /tmp/mini.zip \
   && mkdir -p /var/www/mini \
   && unzip /tmp/mini.zip -d /var/www/ \
