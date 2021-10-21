@@ -2,7 +2,7 @@ FROM debian:stretch
 
 MAINTAINER Arulraj Venni <me@arulraj.net>
 
-# Install Apache, PHP5 and speedtest mini zip
+# Install Apache, PHP and speedtest mini zip
 # 2021.10.20: Updated mini.zip url from last available archive.org archived url
 # 2021.10.20: Updated php5-* packages to php-* to fit
 RUN apt-get update -qq \
