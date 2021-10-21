@@ -13,7 +13,7 @@ RUN apt-get update -qq \
   && cd /var/www/mini \
   && mv index-php.html index.html \
   && mv * ../ \
-  && echo "ServerName localhost" | tee /etc/apache2/apache2.conf \
+  && echo "ServerName localhost" | tee -a /etc/apache2/apache2.conf \
   && apt-get clean autoclean \
   && apt-get autoremove -y \
   && rm -rf /var/lib/{apt,dpkg,cache,log}/* /tmp/* /var/tmp/*
